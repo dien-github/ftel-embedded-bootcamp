@@ -1,15 +1,15 @@
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
-        std::unordered_map<char, int> hash;
+        int table[26]{0};
         for (char c : magazine) {
-           hash[c]++;
+            table[c - 'a']++;
         }
         for (char c : ransomNote) {
-            if (hash[c] == 0) {
+            if (table[c - 'a'] == 0) {
                 return false;
             }
-            hash[c]--;
+            table[c-'a']--;
         }
         return true;
     }
