@@ -9,7 +9,7 @@ public:
             if (table[c - 'a'] == 0) {
                 return false;
             }
-            table[c-'a']--;
+            table[c - 'a']--;
         }
         return true;
     }
